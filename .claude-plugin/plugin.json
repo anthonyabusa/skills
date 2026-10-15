@@ -2,8 +2,41 @@
   "name": "skills",
   "version": "0.1.0",
   "description": "An idea-to-ship pipeline of agent skills: vet the idea, shape it, plan, slice, build test-first, ship with honest evidence, and learn from corrections.",
-  "author": { "name": "Anthony Busa", "url": "https://github.com/anthonyabusa" },
+  "author": {
+    "name": "Anthony Busa",
+    "url": "https://github.com/anthonyabusa"
+  },
   "repository": "https://github.com/anthonyabusa/skills",
   "license": "MIT",
-  "keywords": ["skills", "workflow", "planning", "tdd", "code-review", "pipeline"]
+  "keywords": [
+    "skills",
+    "workflow",
+    "planning",
+    "tdd",
+    "code-review",
+    "pipeline"
+  ],
+  "skills": [
+    "./skills/build/build-graph",
+    "./skills/build/fix",
+    "./skills/build/guardrails",
+    "./skills/build/human-step",
+    "./skills/build/red-first",
+    "./skills/learn/correction-loop",
+    "./skills/learn/retro",
+    "./skills/learn/write-skill",
+    "./skills/meta/ask",
+    "./skills/meta/setup",
+    "./skills/plan/decompose",
+    "./skills/plan/plan",
+    "./skills/shape/decision-map",
+    "./skills/shape/question-first",
+    "./skills/shape/research",
+    "./skills/shape/vet-idea",
+    "./skills/ship/close-out",
+    "./skills/ship/honest-signoff",
+    "./skills/ship/pr-brief",
+    "./skills/talk/plainly",
+    "./skills/talk/questionnaire"
+  ]
 }
