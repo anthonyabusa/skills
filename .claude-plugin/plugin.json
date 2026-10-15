@@ -1,0 +1,9 @@
+{
+  "name": "skills",
+  "version": "0.1.0",
+  "description": "An idea-to-ship pipeline of agent skills: vet the idea, shape it, plan, slice, build test-first, ship with honest evidence, and learn from corrections.",
+  "author": { "name": "Anthony Busa", "url": "https://github.com/anthonyabusa" },
+  "repository": "https://github.com/anthonyabusa/skills",
+  "license": "MIT",
+  "keywords": ["skills", "workflow", "planning", "tdd", "code-review", "pipeline"]
+}

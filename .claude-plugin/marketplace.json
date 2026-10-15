@@ -1,0 +1,8 @@
+{
+  "name": "anthonyabusa",
+  "owner": { "name": "Anthony Busa", "url": "https://github.com/anthonyabusa" },
+  "description": "Idea-to-ship agent skills, as an installable Claude Code plugin.",
+  "plugins": [
+    { "name": "skills", "source": "./", "description": "Vet, shape, plan, slice, build test-first, ship honestly, learn.", "category": "engineering", "keywords": ["workflow", "planning", "tdd"] }
+  ]
+}
