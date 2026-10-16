@@ -26,8 +26,9 @@ Not for: trivial work (a typo, a one-line config change). Just do it.
 ## Steps
 1. Classify the request: bug, idea, task, question, or chat.
 2. Check state: does a plan, task or decision map for this already exist? Is the task store set up (if not: `setup`)?
-3. Name ONE skill and the one-line reason (`vet-idea: the value of a client-email drafter is unproven`). If the request is trivial, say so and do it instead.
-4. A skipped stage gets a reason in one clause (`skipping vet-idea: the human already decided to build this`).
+3. If the right skill depends on a fact only the human has (how big, how slow, what they already tried), ask for it in one short question first; never route on a guess.
+4. Name ONE skill and the one-line reason (`vet-idea: the value of a client-email drafter is unproven`). If the request is trivial, say so and do it instead.
+5. A skipped stage gets a reason in one clause (`skipping vet-idea: the human already decided to build this`).
 
 ## Done when
 One skill is named with a reason, or the work is declared trivial and done.

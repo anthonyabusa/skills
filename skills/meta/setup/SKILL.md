@@ -12,12 +12,12 @@ Not for: changing a single task (use the skill that owns it).
 1. Read `CLAUDE.md` / `AGENTS.md`. If a `Task store:` line exists, report it and stop.
 2. Ask in one batch (AskUserQuestion in Claude Code), recommended option first:
    - Task store: markdown `TASKS.md` (recommended: works offline, lives in git) or GitHub issues (when the team already works from issues; needs the `gh` CLI signed in).
-   - Notes file: `CLAUDE.md` (Claude Code) or `AGENTS.md` (Codex and others). Default to whichever exists.
+   - Notes file: `CLAUDE.md` (Claude Code) or `AGENTS.md` (Codex and others). Default to whichever exists; if both exist, write to both, since each agent reads only its own.
 3. Create what the choice needs, only if missing:
-   - markdown: `TASKS.md` with a one-line header pointing to `docs/task-store.md`;
+   - markdown: `TASKS.md` with a one-line header pointing to `docs/task-store.md` (add the header to an existing `TASKS.md` that lacks it);
    - github: the labels `todo`, `doing`, `blocked`, `decision`, `test` (`gh label create <name>`);
    - both: the folders `docs/plans/`, `docs/decisions/`, `docs/maps/`, `docs/research/`, `docs/retros/` (each with a `.gitkeep`), and `GLOSSARY.md`.
-4. Append to the notes file:
+4. Append to the notes file (each one, if both):
    ```
    ## Agent skills
    Task store: <markdown | github>  (format: docs/task-store.md)

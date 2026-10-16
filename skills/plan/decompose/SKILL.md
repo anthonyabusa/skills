@@ -41,7 +41,7 @@ Not for:
 - Ensure no slice implements unplanned work.
 - Verify terminology matches plan and glossary.
 - Confirm each `depends on` link corresponds to a real dependency.
-- Report coverage: e.g., `coverage: 7/7 plan points, 0 orphan slices`.
+- Report coverage as a mapping a reader can check, each plan point with the task ids that cover it (`acceptance 2 -> T-4, T-6`), then the total: `coverage: 7/7 plan points, 0 orphan slices`.
 
 5. Show the graph
 - Output a table: id, title, depends on, ready now (yes or no).

@@ -41,7 +41,7 @@ Template, in order:
    - One idea per question.  
    - No compound "and/or."  
    - Explicit choices or an example answer; a bare `Answer:` only for the catch-all.  
-   - A few words on what the answer decides, unless it is obvious from the question.  
+   - A few words on what the answer decides, on every question.  
    - The recipient's words. For a non-technical recipient, describe each thing by what it does for them, not by its computer name: no acronyms, units or terms they did not use themselves.  
 6. **Catch-all**: "Anything we should have asked and didn't?"
 
