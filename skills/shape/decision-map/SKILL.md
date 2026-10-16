@@ -38,7 +38,9 @@ One task-store entry per decision: `kind: decision`, with the mode, the map slug
 Route decisions by mode:
 - `research`: assign to a subagent or cheaper model
 - `spike`: build in scratch worktree, time-boxed, answer-only retained
-- `needs-human`: batch into one AskUserQuestion with full context
+- `needs-human`: batch into one AskUserQuestion with full context (in other agents, one message with each question, its options and your recommendation)
+
+A choice someone owns (what the product does, who it is for, how people get or use it) is `needs-human` even when research informs it: research brings the recommendation, the human decides.
 
 ## Step 5: Close the loop
 Write each answer into "Decisions so far", close its task with the answer as evidence, and hand the cleared map to plan.

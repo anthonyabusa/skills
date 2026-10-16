@@ -17,7 +17,7 @@ Not for:
 1. Cut vertical slices
 - Each slice touches every layer it needs (schema, code, UI, docs) and delivers a behaviour you can run.
 - Size each slice to fit one context window: if too big, split by behaviour, not by layer.
-- Put the plan's acceptance points for this slice in its `done when`, including at least one check against the running system (not only unit tests).
+- Put the plan's acceptance points for this slice in its `done when`, including at least one check against the running system (not only unit tests), written as a command and its expected output, never "manual check".
 - Note what the slice will not do, so it does not drift.
 
 2. Order and wire dependencies

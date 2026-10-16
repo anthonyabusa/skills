@@ -20,7 +20,7 @@ Not for: a single task with no dependencies; use red-first or fix instead.
    - Merge the results one at a time, bringing the branch current with main after each merge.
 
 3. Walk the graph
-   - Build a node only when every node it depends on is green.
+   - Build a node only when every node it depends on is green. Without fan-out, build one node at a time: finish, verify and record it before writing code for the next.
    - Per node: set it to `doing` in the task store, build it (red-first where there is a testable seam), run its verify command, record the result.
    - Long graphs: run nodes in the background and keep a per-node log.
 

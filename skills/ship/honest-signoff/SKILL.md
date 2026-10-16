@@ -9,10 +9,13 @@ Use when: a turn or session that committed code, changed tasks or touched shared
 Not for: pure conversation, quick answers, acknowledgements.
 
 ## Step 1: Is this stop legitimate?
-A turn may end for exactly three reasons:
+A turn may end for exactly four reasons:
 - **Input needed:** a decision, a credential, or something only the human can see or do.
 - **All work done:** nothing in scope is left that you could take next.
 - **Blocked:** a named blocker that you cannot clear.
+- **Asked to stop:** the human said to stop, wrap up or hand back. Commit and push what you have, then stop.
+
+The status describes the work the human asked for, not this turn's chores: `done` only when it is finished, verified and pushed; handing back unfinished work is `in-progress`, with where it stopped.
 
 Not a reason: "the work is committed", "a slice finished", or wanting permission to continue a direction already agreed. If you know the next in-scope step and need nothing from the human, do it instead of stopping. The tell of a bad stop: status `in-progress`, a takeable `Next`, and no real `Asks`.
 
