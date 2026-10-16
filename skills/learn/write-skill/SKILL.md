@@ -35,36 +35,21 @@ Not for:
 
 5. Test the routing
    - Write 3 or more prompts that should load the skill and 2 or more near-misses that should not (they belong to a neighbouring skill).
-   - Run each in a fresh session and record whether the skill loaded. Every should-fire prompt fires and every near-miss stays quiet; otherwise sharpen the description and rerun.
+   - Run each prompt in its own fresh headless session with the skill installed (`claude -p "<prompt>"`, `codex exec "<prompt>"` or your agent's equivalent) and record whether the skill loaded. A subagent asked "which skill would you pick?" is not a routing test.
+   - Every should-fire prompt fires and every near-miss stays quiet; otherwise sharpen the description and rerun all of them.
 
 6. Test the behaviour
-   - Seed a real scenario the skill should handle (a small repo, a failing test, a foggy request).
-   - Run the skill headless (for example `claude -p "<scenario>"`) with the tools it needs and nothing destructive.
-   - Read the transcript against each step. Every slip (a skipped step, a guessed value, a wrong file) traces to a line in the skill: fix that line and rerun until clean.
-   - Put the scenario and the result in the commit message.
+   - Seed a real scenario the skill should handle in a scratch copy (a small repo, a failing test, a foggy request).
+   - Run the skill there in a fresh headless session, not a subagent of this one.
+   - Read the transcript against each step. Every slip (a skipped step, a guessed value, a wrong file) traces to a line in the skill: fix that line, then run the scenario again. Repeat until a run comes back clean.
 
-## Done when` section listing observable completion criteria
-   - Credit adapted sources by name and license (e.g., "Adapted from mattpocock/skills tdd (MIT)")
-
-5. Run routing test
-   - Add 3+ prompts that should trigger the skill and 2+ near-misses that should not
-   - Test routing precision and recall (must be >=0.85)
-   - Confirm no regression on existing tests
-
-6. Run headless behavior DIAG
-   - Seed real scenario exercising the skill
-   - Run headless (e.g., `claude -p`) with limited tools, no writes
-   - Verify all steps execute correctly; fix any slips in the skill text
-   - Document DIAG results in commit
-
-7. Register the skill
-   - Add to `INDEX.md`
-   - Sync to Codex surface
-   - Commit with adapters
+7. Install and commit
+   - Put the skill where the repo's agent loads skills (`.claude/skills/<name>/` for Claude Code, `.agents/skills/<name>/` for Codex and others; use the folder the repo already has).
+   - Commit it with a message that records both tests: the prompts and their results, the scenario, each fix, and the clean final run.
 
 ## Done when
-- Every should-fire prompt loads the skill and every near-miss does not.
-- A headless run on a real scenario follows every step with no slips.
-- The commit records both tests.
+- Every should-fire prompt loaded the skill and every near-miss did not, each in its own fresh session.
+- The last headless run on a real scenario followed every step with no slips, and it ran after the last edit.
+- The skill is installed where the repo's agent loads skills, and the commit records both tests.
 
 Draws on obra/superpowers writing-skills, BMAD-METHOD agent evals and mattpocock/skills writing guidance (all MIT). The text here is original.

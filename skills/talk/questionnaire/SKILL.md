@@ -41,6 +41,7 @@ Template, in order:
    - One idea per question.  
    - No compound "and/or."  
    - Answer stub (`Answer:`) or explicit choices if answer space is known.  
+   - A few words on what the answer decides, unless it is obvious from the question.  
 6. **Catch-all**: "Anything we should have asked and didn't?"
 
 Keep money, credentials and other people's personal details out of anything you save or commit.
@@ -48,8 +49,14 @@ Keep money, credentials and other people's personal details out of anything you 
 ## Step 5: Hand it over  
 Output:  
 - Label it `DRAFT: do not send`.  
-- Put the body in one copyable code block, each paragraph on one unbroken line, so it pastes cleanly.  
+- Put the whole body in one copyable code block. Each paragraph, each question and each answer stub sits on one unbroken line (no hard wraps inside a line), so it pastes cleanly into email or chat.  
 - Never send it yourself: sending is external and the human's call.  
 - Worth keeping: save it as `docs/questionnaires/<date>-<recipient-role>.md`.
+
+## Done when
+- The send details (recipient role, what is needed back and by when, channel, sender) were settled with the human, asking only what could not be inferred.
+- Every question closes a named gap; none asks for something already known, a secret or a password.
+- The draft follows the template order, and every question has an answer stub or explicit choices.
+- It was handed over labelled `DRAFT: do not send`, in one copyable code block, and was not sent.
 
 Adapted from mattpocock/skills to-questionnaire (MIT).
