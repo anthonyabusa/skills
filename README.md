@@ -37,7 +37,7 @@ Several skills read and write tasks. By default that is one `TASKS.md` file at t
 
 ## How the skills are written
 
-Each skill opens with the failure it prevents, then when to use it and when not to, then numbered steps, then a `Done when` list you can check. The bar for every step is that a model following it cold, in a repo it has never seen, does the right thing. Each one was tested that way: a headless run on a real scenario, with every slip traced back to the text and fixed.
+Each skill opens with the failure it prevents, then when to use it and when not to, then numbered steps, then a `Done when` list you can check. The bar for every step is that a model following it cold, in a repo it has never seen, does the right thing. They were checked two ways: a headless Claude Code smoke run, and a scripted scenario for every skill run by a non-Claude agent (a local Qwen3 235B model) and graded against the skill's own steps. Any slip a grader traced to the wording was fixed; the remaining misses were the agent skipping steps the text already states.
 
 ## Credit
 
