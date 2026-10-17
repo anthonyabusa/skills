@@ -32,7 +32,7 @@ Read the code, config, docs, prior decision records (`docs/decisions/`), project
 
 ## Build mode: one batch, then run
 
-1. Write a brief plan (3-7 lines) and list every blocking question.
+1. Write a brief plan (3-7 lines) and list every blocking question. When the build removes or overwrites anything, two are always blocking: does it need confirming, and can it be undone.
 2. Ask them all in ONE batch before writing any code: AskUserQuestion in Claude Code (up to 4 questions, 2-4 options each, recommended option first and labelled "(Recommended)"); in any other agent, one message listing every question with its options and recommended default, then wait for the answers. Ask even when you think you could guess the answer.
 3. Save each answer (Step 3), then run to done with no further confirmation pauses. Mid-build forks that are reversible: make the call and note it.
 

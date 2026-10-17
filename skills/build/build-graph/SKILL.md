@@ -12,7 +12,7 @@ Not for: a single task with no dependencies; use red-first or fix instead.
 1. Write the graph down
    - From the task store, collect the target tasks and their `depends on` links. Drop links to tasks already `done`.
    - A link to an unfinished task outside this run blocks the graph: finish that task first, or add it to the run.
-   - Write the order as a short table in your reply: node, depends on, verify command. A node without a verify command is not buildable; give it one first.
+   - Before building any node, write the order as a short table in your reply: node, depends on, verify command. A node without a verify command is not buildable; give it one first.
 
 2. Fan out the independent nodes
    - Nodes with no dependency path between them can run at the same time, each in a subagent working in its own git worktree, so checkouts do not collide.
