@@ -22,7 +22,7 @@ Not for:
 5. Replace abstractions with concrete examples: name the actual file, task, or command.  
 6. If order matters, use a numbered list. Otherwise, use prose.  
 7. Keep the rewrite shorter than the original message.  
-8. End with the single action or decision the human needs, if any.
+8. End with the single action or decision the human needs, if any. Nothing comes after it: put notes about saved files or caveats before it.
 
 ## Done when:  
 - The explanation uses plain, simple English.  
