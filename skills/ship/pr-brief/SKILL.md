@@ -17,7 +17,7 @@ Not for:
 1. Write the PR body (in the repo's PR template if it has one):
    - **Summary**: What changed and why; link task by title and id (e.g., "Closes T-1234: Add user auth").
    - **Evidence**: Test output, probes, or screenshot paths showing verification.
-   - **Door**: `one-way` if change affects public schema, data, money, or requires human approval; else `two-way`.
+   - **Door**: `one-way` if change affects public schema, data (including where user data is read or written), money, or requires human approval; else `two-way`. If reverting the code would leave a user's existing data unread or changed, it is `one-way`.
    - **Blast radius**: what this can break, who or what depends on it, every change a user will notice, and how to undo it. If the change rewrites or deletes data, say so: reverting the code does not bring the data back.
 
 2. Honor the Door:
