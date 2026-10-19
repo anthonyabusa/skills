@@ -12,7 +12,7 @@ Not for: a single task with no dependencies; use red-first or fix instead.
 1. Write the graph down
    - From the task store, collect the target tasks and their `depends on` links. Drop links to tasks already `done`.
    - A link to an unfinished task outside this run blocks the graph: finish that task first, or add it to the run.
-   - Before building any node, write the order as a short table in your reply: node, depends on, verify command. A node without a verify command is not buildable; give it one first.
+   - Before any code, write the order as a table (node, depends on, verify command) to `docs/plans/build-order.md` and commit it on its own. A node without a verify command is not buildable; give it one first.
 
 2. Fan out the independent nodes
    - Nodes with no dependency path between them can run at the same time, each in a subagent working in its own git worktree, so checkouts do not collide.
@@ -21,6 +21,7 @@ Not for: a single task with no dependencies; use red-first or fix instead.
 
 3. Walk the graph
    - Build a node only when every node it depends on is green. Without fan-out, build one node at a time: finish, verify and record it before writing code for the next.
+   - Set the next node to `doing` only after you have seen the previous node's verify output pass, in a later command, never in the same one.
    - Per node: set it to `doing` in the task store, build it (red-first where there is a testable seam), run its verify command, record the result.
    - Long graphs: run nodes in the background and keep a per-node log.
 
@@ -33,6 +34,7 @@ Not for: a single task with no dependencies; use red-first or fix instead.
    - List each node with its status (green, red, halted) and the verify output that proves it.
 
 ## Done when
+- `docs/plans/build-order.md` was committed before the first node's code.
 - All buildable nodes are completed in dependency order.
 - Red nodes are isolated and reported for fixing.
 - Halted downstream nodes are documented, not falsely marked done.
