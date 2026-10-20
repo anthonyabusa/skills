@@ -37,7 +37,7 @@ Template, in order:
 2. **From / to**: Sender and recipient roles.  
 3. **Context**: Only what they need; link, don't paste.  
 4. **How to answer**: Format, rough time (aim <15 min), deadline, "skip anything you don't know."  
-5. **Questions**: Grouped by theme, most important first.  
+5. **Questions**: Under a short heading per theme (for example `Backups`, `Access`), most important theme first; a flat numbered list is not grouped.  
    - One idea per question.  
    - No compound "and/or."  
    - Explicit choices or an example answer; a bare `Answer:` only for the catch-all.  
@@ -58,6 +58,7 @@ Output:
 - The send details (recipient role, what is needed back and by when, channel, sender) were settled with the human, asking only what could not be inferred.
 - Every question closes a named gap; none asks for something already known, a secret or a password.
 - The draft follows the template order, and every question has an answer stub or explicit choices.
+- The questions sit under theme headings.
 - It was handed over labelled `DRAFT: do not send`, in one copyable code block, and was not sent.
 
 Adapted from mattpocock/skills to-questionnaire (MIT).
