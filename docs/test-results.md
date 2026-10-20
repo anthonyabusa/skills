@@ -35,4 +35,11 @@ Two skills still missed after that, so each got a few variants of the failing st
 
 `red-first` showed no gain, so its first scenario (`list --open`) was replaced with a harder one. The new prompt calls `count` a one-liner and says to just drop it in, and the suggested line would also print the whole list after the number. Without the skill, Sonnet still wrote the failing test first in all three runs and caught the problem. Its row is from the harder scenario: on this model, test-first is already the default, and the skill adds no measurable gain.
 
+To see whether that holds for a weaker model, both `red-first` scenarios were also run with Claude Haiku as the agent (graders unchanged). Without the skill, Haiku wrote no test in any of 6 runs. With it, Haiku wrote a passing test in all 6.
+
+| red-first on Haiku | With: all checks | Without: all checks | With: outcome | Without: outcome |
+|---|---|---|---|---|
+| first scenario (`list --open`) | 1/3 | 0/3 | 1/3 | 0/3 |
+| harder scenario (`count`) | 2/3 | 0/3 | 2/3 | 0/3 |
+
 Five test-harness defects were found and fixed during the runs, and the affected runs were rescored or rerun: a setup that pushed a commit the scenario says was never pushed (`correction-loop`), a pattern that missed the word "kept" (`retro`), a check that graded the skill's own hand-off as an outcome (`write-skill`), a check that called the recipient non-technical when the scenario says they know the NAS well (`questionnaire`, regraded), and a system Python upgrade mid-run that left the test runner without pytest (`question-first`, rerun).
