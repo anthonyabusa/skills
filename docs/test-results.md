@@ -46,7 +46,7 @@ Six test-harness defects were found and fixed during the runs, and the affected 
 
 ## Haiku
 
-The same held-out scenarios, run with Claude Haiku as the agent (three runs per arm, same graders, same skill text). Haiku follows the skills less fully than Sonnet. The first Haiku run met every outcome check in 34 of 63 runs with the skills. Eight skills where it scored 0 of 3 then got a structural fix: a line to write down (`Inside:` and `Outside:` in `vet-idea`), a file template with a required `Not tested:` line (`research`), a retro file template (`retro`), a fixed closing line (`pr-brief`), a rule that a check only the human can make keeps the task open (`honest-signoff`), a reply that must carry the answer (`plainly`), and a grep for the rule that caused the mistake, to be changed where it is (`correction-loop`). Each fix was run on Sonnet too, so its rows above are from the fixed text. Haiku now meets every outcome check in 48 of 63 runs with the skills, against 8 without. The first fixes for `correction-loop` (a plain rule) and `research` (a clause inside the `Checked:` line) gave no lift; both held only once the step became its own command or line.
+The same held-out scenarios, run with Claude Haiku as the agent (three runs per arm, same graders, same skill text). Haiku follows the skills less fully than Sonnet. The first Haiku run met every outcome check in 34 of 63 runs with the skills. Eight skills where it scored 0 of 3 then got a structural fix: a line to write down (`Inside:` and `Outside:` in `vet-idea`), a file template with a required `Not tested:` line (`research`), a retro file template whose `## Last retro` lines start with the verdict word, a required `## Stalled` section and a `git show --stat` check of last retro's change (`retro`, in a later round), a fixed closing line (`pr-brief`), a rule that a check only the human can make keeps the task open (`honest-signoff`), a reply that must carry the answer (`plainly`), and a grep for the rule that caused the mistake, to be changed where it is (`correction-loop`). Each fix was run on Sonnet too, so its rows above are from the fixed text. Haiku now meets every outcome check in 50 of 63 runs with the skills, against 8 without. The first fixes for `correction-loop` (a plain rule) and `research` (a clause inside the `Checked:` line) gave no lift; both held only once the step became its own command or line. A third round on `plainly` (first word `Yes`, `No` or `Only if`; the action only as the `Next:` line) showed no lift and was not kept.
 
 | Skill | With: all checks | Without: all checks | With: outcome | Without: outcome | Gain |
 |---|---|---|---|---|---|
@@ -65,10 +65,10 @@ The same held-out scenarios, run with Claude Haiku as the agent (three runs per 
 | honest-signoff | 3/3 | 0/3 | 3/3 | 0/3 | yes |
 | close-out | 1/3 | 0/3 | 3/3 | 0/3 | yes |
 | correction-loop | 1/3 | 0/3 | 2/3 | 0/3 | yes |
-| retro | 1/3 | 0/3 | 1/3 | 0/3 | yes |
+| retro | 3/3 | 0/3 | 3/3 | 0/3 | yes |
 | write-skill | 0/3 | 0/3 | 3/3 | 0/3 | yes |
 | plainly | 1/3 | 0/3 | 1/3 | 0/3 | yes |
 | questionnaire | 0/3 | 0/3 | 1/3 | 0/3 | yes |
 | ask | 0/3 | 0/3 | 3/3 | 3/3 | none |
 | setup | 3/3 | 0/3 | 3/3 | 0/3 | yes |
-| **Total** | 22/63 | 0/63 | 48/63 | 8/63 | |
+| **Total** | 24/63 | 0/63 | 50/63 | 8/63 | |

@@ -25,14 +25,21 @@ Require 2 or more instances; one-offs are notes. Sort into: repeated, slow, brok
 For each harmful pattern, mint exactly one change: rule, skill edit, test, or tool, written to the task store with `why` citing the evidence. For each working pattern, state what keeps it. No blame. No lesson without change.
 
 ## Step 5: Close the last loop
-For each change from last retro: did it ship? Did the pattern stop? Decide: keep, adjust, or drop. State verdict.
+For each change from last retro: did it ship? Did the pattern stop? Check the commits it should have changed (`git show --stat <hash>`: did the fix commit touch a test?) and write what you saw as the evidence, e.g. `640f5b0 touched only todo.py, no test`. Decide: keep, adjust, or drop. State verdict.
 
 ## Step 6: Save
-Write `docs/retros/<date>.md` with these sections: `## Window`, `## Evidence`, `## Patterns`, `## Changes` (one line per change: the new task id in the task store and its evidence), `## Last retro` (one line per earlier change: `<change id>: keep | adjust | drop, <evidence>`). Create each change's task before writing the file. Commit. Keep money, credentials and other people's details out of it.
+Write `docs/retros/<date>.md` with these sections, each one present even if empty:
+- `## Window`
+- `## Evidence`
+- `## Patterns`: one line per pattern, `<the commit subjects' own words>: <hashes>`.
+- `## Stalled`: one line per task in `doing` with no update for 3 or more days, or `none`.
+- `## Changes`: one line per change, the new task id in the task store and its evidence.
+- `## Last retro`: one line per earlier change, starting with the verdict word: `keep: <change id>, <evidence>`, `adjust: ...` or `drop: ...`. "Not implemented" is evidence, not a verdict. Create each change's task before writing the file. Commit. Keep money, credentials and other people's details out of it.
 
 ## Done when
 - Every pattern cites evidence and has one change minted as a task, or a stated reason why none.  
-- The previous retro's changes each have a verdict.  
+- The previous retro's changes each have a verdict line starting with keep, adjust or drop.
+- Stalled tasks are listed, or the section says `none`.  
 - The retro file is committed.
 
 Draws on garrytan/gstack retro, BMAD-METHOD retrospective and mattpocock/skills retro (all MIT). The text here is original.
