@@ -19,9 +19,11 @@ Not for:
    - Ask: which artifact should have produced the right behaviour?  
    - A missing test, a missing rule in CLAUDE.md or AGENTS.md, a skill step that was absent or unclear, or a doc that said the wrong thing.  
    - Trace to the governing procedural source, not just the symptom.
+   - Search the instruction files first: `grep -n -i <topic> AGENTS.md CLAUDE.md`. A line there that allowed the mistake is the root cause.
 
 2. **Fix the rule, not just the instance.**  
-   - Edit the skill, CLAUDE.md, or process doc with a targeted delta (no rewrite).  
+   - Change the line that caused the mistake, in the file where it already is. Adding a new rule in another file leaves the old line in force; replace the old wording instead of adding to it.
+   - Only if no line covers it, add one to the file agents already read (AGENTS.md if it exists).  
    - Preserve rationale: explain *why* the rule exists, not just what it does.  
    - Apply the fix to prevent recurrence across all future uses.
 
@@ -30,13 +32,14 @@ Not for:
    - The rule lives in the artifact that enforces it; notes only point at it.
 
 4. **Check for similar gaps.**  
+   - Correct the instance too: if the bad commit is not pushed, `git commit --amend` it with the right message; if it was pushed, leave it and say so.
    - Audit recent work for the same class of mistake.  
    - Run a spot-check against the updated rule.  
    - Surface any findings with the same correction loop.
 
 5. **Log the correction.**  
    - Include in the commit message body: what changed, why, and where.  
-   - Tell the human in one line which artifact changed (`fixed: tests/test_export.py + AGENTS.md rule on redaction`).
+   - Reply in two lines: `fixed: <file and rule changed>, <instance fixed or why not>` and `checked: <what you audited>, <what you found>`.
 
 ## Done when:  
 - The rule is fixed in the governing artifact.  
@@ -44,3 +47,4 @@ Not for:
 - Any duplicate note points at the artifact.  
 - The same class of mistake was checked elsewhere, and any hits were fixed.  
 - The human was told which artifact changed.
+- `git diff` shows the old line replaced in the file it was in.

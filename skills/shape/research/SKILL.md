@@ -36,6 +36,7 @@ Not for:
 5. End with a clear answer, confidence level (high, medium, low), and what evidence would change it.
    - Example: "Answer: Yes. Confidence: high. Evidence: React 18 release notes + source."
    - If inconclusive, summarize unknowns.
+   - In the reply, give the answer with the version you ran and the `Not tested:` line, so the human sees the limit without opening the file.
 
 6. Validate every claim against primary sources.
    - Open each cited URL or repo path:line.
@@ -45,7 +46,7 @@ Not for:
 
 7. Save valid findings to `docs/research/<YYYY-MM-DD>-<slug>.md`, starting with these lines:
    - `Question:` / `Answer:` / `Confidence: high | medium | low`
-   - `Checked: <date>, <exact versions you ran>; other versions not tested` / `Sources:`
+   - `Checked: <date>, <exact versions you ran>` / `Not tested: <versions you did not run, e.g. Python 3.8 to 3.12>` / `Sources:`
    - Use the date and topic in the filename.
    - Do not save until all claims are verified.
 
@@ -58,6 +59,6 @@ Not for:
 - Every claim has been validated against a primary source.
 - Confidence and expiry are stated.
 - Findings are saved (if applicable) with a verification stamp.
-- The saved file has the `Confidence:` and `Checked:` lines.
+- The saved file has the `Confidence:`, `Checked:` and `Not tested:` lines, and the reply repeats `Not tested:`.
 
 Sourcing discipline adapted from mattpocock/skills research (MIT).
