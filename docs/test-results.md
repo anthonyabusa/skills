@@ -43,3 +43,32 @@ To see whether that holds for a weaker model, both `red-first` scenarios were al
 | harder scenario (`count`) | 2/3 | 0/3 | 2/3 | 0/3 |
 
 Five test-harness defects were found and fixed during the runs, and the affected runs were rescored or rerun: a setup that pushed a commit the scenario says was never pushed (`correction-loop`), a pattern that missed the word "kept" (`retro`), a check that graded the skill's own hand-off as an outcome (`write-skill`), a check that called the recipient non-technical when the scenario says they know the NAS well (`questionnaire`, regraded), and a system Python upgrade mid-run that left the test runner without pytest (`question-first`, rerun).
+
+## Haiku
+
+The same held-out scenarios, run with Claude Haiku as the agent (three runs per arm, same graders, same skill text). Haiku follows the skills less fully than Sonnet, so fewer runs meet every check, but the skills still lift it on outcomes: 34 of 63 runs against 8 without them.
+
+| Skill | With: all checks | Without: all checks | With: outcome | Without: outcome | Gain |
+|---|---|---|---|---|---|
+| vet-idea | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| question-first | 0/3 | 0/3 | 3/3 | 0/3 | yes |
+| research | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| decision-map | 1/3 | 0/3 | 1/3 | 0/3 | yes |
+| plan | 0/3 | 0/3 | 2/3 | 0/3 | yes |
+| decompose | 0/3 | 0/3 | 3/3 | 3/3 | none |
+| build-graph | 1/3 | 0/3 | 3/3 | 1/3 | yes |
+| red-first | 2/3 | 0/3 | 2/3 | 0/3 | yes |
+| fix | 1/3 | 0/3 | 3/3 | 0/3 | yes |
+| guardrails | 1/3 | 0/3 | 1/3 | 0/3 | yes |
+| human-step | 0/3 | 0/3 | 3/3 | 1/3 | yes |
+| pr-brief | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| honest-signoff | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| close-out | 1/3 | 0/3 | 3/3 | 0/3 | yes |
+| correction-loop | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| retro | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| write-skill | 0/3 | 0/3 | 3/3 | 0/3 | yes |
+| plainly | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| questionnaire | 0/3 | 0/3 | 1/3 | 0/3 | yes |
+| ask | 0/3 | 0/3 | 3/3 | 3/3 | none |
+| setup | 3/3 | 0/3 | 3/3 | 0/3 | yes |
+| **Total** | 10/63 | 0/63 | 34/63 | 8/63 | |
