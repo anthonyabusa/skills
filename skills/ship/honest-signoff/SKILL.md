@@ -16,6 +16,7 @@ A turn may end for exactly four reasons:
 - **Asked to stop:** the human said to stop, wrap up or hand back. Commit and push what you have, then stop.
 
 The status describes the work the human asked for, not this turn's chores: `done` only when it is finished, verified and pushed; handing back unfinished work is `in-progress`, with where it stopped.
+A `done when` item that only the human can check (a phone, a screen, an account) means the task is not done yet: leave it open in the task store, use `in-progress`, and put that item under `Check`.
 
 Not a reason: "the work is committed", "a slice finished", or wanting permission to continue a direction already agreed. If you know the next in-scope step and need nothing from the human, do it instead of stopping. The tell of a bad stop: status `in-progress`, a takeable `Next`, and no real `Asks`.
 

@@ -31,7 +31,7 @@ Not for:
 
 4. Date findings and the versions checked.
    - Findings expire when versions change.
-   - Include the check date and environment.
+   - Include the check date and the exact versions you ran (print them, e.g. `python3 --version`, and copy the output).
 
 5. End with a clear answer, confidence level (high, medium, low), and what evidence would change it.
    - Example: "Answer: Yes. Confidence: high. Evidence: React 18 release notes + source."
@@ -43,7 +43,9 @@ Not for:
    - Drop or re-source unsupported claims.
    - Never invent a source.
 
-7. Save valid findings to `docs/research/<date>-<slug>.md` if worth keeping.
+7. Save valid findings to `docs/research/<YYYY-MM-DD>-<slug>.md`, starting with these lines:
+   - `Question:` / `Answer:` / `Confidence: high | medium | low`
+   - `Checked: <date>, <exact versions you ran>; other versions not tested` / `Sources:`
    - Use the date and topic in the filename.
    - Do not save until all claims are verified.
 
@@ -56,5 +58,6 @@ Not for:
 - Every claim has been validated against a primary source.
 - Confidence and expiry are stated.
 - Findings are saved (if applicable) with a verification stamp.
+- The saved file has the `Confidence:` and `Checked:` lines.
 
 Sourcing discipline adapted from mattpocock/skills research (MIT).

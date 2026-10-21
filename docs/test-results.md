@@ -4,9 +4,9 @@ One held-out scenario per skill, three runs with the skill and three without it.
 
 | Skill | With: all checks | Without: all checks | With: outcome | Without: outcome | Gain |
 |---|---|---|---|---|---|
-| vet-idea | 2/3 | 0/3 | 2/3 | 0/3 | yes |
+| vet-idea | 3/3 | 0/3 | 3/3 | 0/3 | yes |
 | question-first | 3/3 | 0/3 | 3/3 | 0/3 | yes |
-| research | 2/3 | 0/3 | 2/3 | 0/3 | yes |
+| research | 3/3 | 0/3 | 3/3 | 0/3 | yes |
 | decision-map | 3/3 | 0/3 | 3/3 | 3/3 | form only |
 | plan | 3/3 | 0/3 | 3/3 | 1/3 | yes |
 | decompose | 3/3 | 0/3 | 3/3 | 3/3 | form only |
@@ -16,7 +16,7 @@ One held-out scenario per skill, three runs with the skill and three without it.
 | guardrails | 3/3 | 1/3 | 3/3 | 1/3 | yes |
 | human-step | 3/3 | 0/3 | 3/3 | 3/3 | form only |
 | pr-brief | 3/3 | 0/3 | 3/3 | 0/3 | yes |
-| honest-signoff | 3/3 | 0/3 | 3/3 | 3/3 | form only |
+| honest-signoff | 2/3 | 0/3 | 2/3 | 3/3 | form only |
 | close-out | 3/3 | 0/3 | 3/3 | 3/3 | form only |
 | correction-loop | 3/3 | 0/3 | 3/3 | 0/3 | yes |
 | retro | 3/3 | 1/3 | 3/3 | 3/3 | form only |
@@ -25,7 +25,7 @@ One held-out scenario per skill, three runs with the skill and three without it.
 | questionnaire | 3/3 | 0/3 | 3/3 | 0/3 | yes |
 | ask | 2/3 | 1/3 | 3/3 | 3/3 | form only |
 | setup | 3/3 | 1/3 | 3/3 | 3/3 | form only |
-| **Total** | 60/63 | 7/63 | 61/63 | 38/63 | |
+| **Total** | 61/63 | 7/63 | 62/63 | 38/63 | |
 
 After the first round, `question-first`, `build-graph`, `pr-brief` and `plainly` each got a one-line fix for a miss that repeated in at least two of three runs. Those four were then run again, both arms, and their rows above are from that second run. Before the fix they stood at 0, 0, 1 and 0 of 3 on all checks.
 
@@ -42,15 +42,15 @@ To see whether that holds for a weaker model, both `red-first` scenarios were al
 | first scenario (`list --open`) | 1/3 | 0/3 | 1/3 | 0/3 |
 | harder scenario (`count`) | 2/3 | 0/3 | 2/3 | 0/3 |
 
-Five test-harness defects were found and fixed during the runs, and the affected runs were rescored or rerun: a setup that pushed a commit the scenario says was never pushed (`correction-loop`), a pattern that missed the word "kept" (`retro`), a check that graded the skill's own hand-off as an outcome (`write-skill`), a check that called the recipient non-technical when the scenario says they know the NAS well (`questionnaire`, regraded), and a system Python upgrade mid-run that left the test runner without pytest (`question-first`, rerun).
+Six test-harness defects were found and fixed during the runs, and the affected runs were rescored or rerun: a setup that pushed a commit the scenario says was never pushed (`correction-loop`), a pattern that missed the word "kept" (`retro`), a check that graded the skill's own hand-off as an outcome (`write-skill`), a check that called the recipient non-technical when the scenario says they know the NAS well (`questionnaire`, regraded), a script that failed any rule quoting the old "one short line" wording, even one replacing it (`correction-loop`, rescored), and a system Python upgrade mid-run that left the test runner without pytest (`question-first`, rerun).
 
 ## Haiku
 
-The same held-out scenarios, run with Claude Haiku as the agent (three runs per arm, same graders, same skill text). Haiku follows the skills less fully than Sonnet, so fewer runs meet every check, but the skills still lift it on outcomes: 34 of 63 runs against 8 without them.
+The same held-out scenarios, run with Claude Haiku as the agent (three runs per arm, same graders, same skill text). Haiku follows the skills less fully than Sonnet. The first Haiku run met every outcome check in 34 of 63 runs with the skills. Six skills where it scored 0 of 3 then got a structural fix: a line to write down (`Inside:` and `Outside:` in `vet-idea`), a file template (`research`, `retro`), a fixed closing line (`pr-brief`), a rule that a check only the human can make keeps the task open (`honest-signoff`), and a reply that must carry the answer (`plainly`). Each fix was run on Sonnet too, so its rows above are from the fixed text. Haiku now meets every outcome check in 44 of 63 runs with the skills, against 8 without. `correction-loop` and `research` still score 0 on Haiku: it never edits the governing rule, and it does not say which versions it left untested.
 
 | Skill | With: all checks | Without: all checks | With: outcome | Without: outcome | Gain |
 |---|---|---|---|---|---|
-| vet-idea | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| vet-idea | 2/3 | 0/3 | 3/3 | 0/3 | yes |
 | question-first | 0/3 | 0/3 | 3/3 | 0/3 | yes |
 | research | 0/3 | 0/3 | 0/3 | 0/3 | none |
 | decision-map | 1/3 | 0/3 | 1/3 | 0/3 | yes |
@@ -61,14 +61,14 @@ The same held-out scenarios, run with Claude Haiku as the agent (three runs per 
 | fix | 1/3 | 0/3 | 3/3 | 0/3 | yes |
 | guardrails | 1/3 | 0/3 | 1/3 | 0/3 | yes |
 | human-step | 0/3 | 0/3 | 3/3 | 1/3 | yes |
-| pr-brief | 0/3 | 0/3 | 0/3 | 0/3 | none |
-| honest-signoff | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| pr-brief | 2/3 | 0/3 | 2/3 | 0/3 | yes |
+| honest-signoff | 3/3 | 0/3 | 3/3 | 0/3 | yes |
 | close-out | 1/3 | 0/3 | 3/3 | 0/3 | yes |
 | correction-loop | 0/3 | 0/3 | 0/3 | 0/3 | none |
-| retro | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| retro | 1/3 | 0/3 | 1/3 | 0/3 | yes |
 | write-skill | 0/3 | 0/3 | 3/3 | 0/3 | yes |
-| plainly | 0/3 | 0/3 | 0/3 | 0/3 | none |
+| plainly | 1/3 | 0/3 | 1/3 | 0/3 | yes |
 | questionnaire | 0/3 | 0/3 | 1/3 | 0/3 | yes |
 | ask | 0/3 | 0/3 | 3/3 | 3/3 | none |
 | setup | 3/3 | 0/3 | 3/3 | 0/3 | yes |
-| **Total** | 10/63 | 0/63 | 34/63 | 8/63 | |
+| **Total** | 19/63 | 0/63 | 44/63 | 8/63 | |

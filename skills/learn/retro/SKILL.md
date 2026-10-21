@@ -28,7 +28,7 @@ For each harmful pattern, mint exactly one change: rule, skill edit, test, or to
 For each change from last retro: did it ship? Did the pattern stop? Decide: keep, adjust, or drop. State verdict.
 
 ## Step 6: Save
-Write `docs/retros/<date>.md`: window, evidence summary, patterns, task IDs, last retro's verdicts. Commit. Keep money, credentials and other people's details out of it.
+Write `docs/retros/<date>.md` with these sections: `## Window`, `## Evidence`, `## Patterns`, `## Changes` (one line per change: the new task id in the task store and its evidence), `## Last retro` (one line per earlier change: `<change id>: keep | adjust | drop, <evidence>`). Create each change's task before writing the file. Commit. Keep money, credentials and other people's details out of it.
 
 ## Done when
 - Every pattern cites evidence and has one change minted as a task, or a stated reason why none.  

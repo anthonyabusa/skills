@@ -25,6 +25,7 @@ Not for:
 8. Reply in this shape, nothing before or after it:
    - First line: the direct answer to what they asked.
    - Then the plain explanation.
+   - The reply itself carries the answer and the explanation, even when you also save a file. A reply that only says where it saved is not an answer.
    - Then `Saved: <path>`, only if you saved a file.
    - Last line: `Next: <one action>`, only if there is one.
 
