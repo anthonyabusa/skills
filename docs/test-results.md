@@ -72,3 +72,18 @@ The same held-out scenarios, run with Claude Haiku as the agent (three runs per 
 | ask | 0/3 | 0/3 | 3/3 | 3/3 | none |
 | setup | 3/3 | 0/3 | 3/3 | 0/3 | yes |
 | **Total** | 24/63 | 0/63 | 50/63 | 8/63 | |
+
+## UI craft and Swift skills
+
+Added after the tables above and tested the same way: one held-out scenario per skill on a small static web app seeded with the usual mistakes (a viewport that disables zoom, `100vh`, a `transition: all 0.3s ease-in` button, ungated hover, 14px inputs). Claude Haiku was the agent, Sonnet graded the judgment checks three times each, and every scripted check was confirmed red on the untouched app first. These runs used the versions of the skills from my own setup, which differ from the text here only in project names and where a prototype gets published.
+
+| Skill | With: all checks | Without: all checks |
+|---|---|---|
+| motion | 3/3 | 0/3 |
+| break-ui | 2/3 | 0/3 |
+| mobile-native | 3/3 | 0/3 |
+| write-swift | 3/3 | 2/3 |
+| prototype | 3/3 | 0/3 |
+
+Two of the five needed fixes before they passed, so for those the scenario is no longer unseen. `motion` went 1/3 in its first round: agents added correct motion but left an `ease-in` that was already in the file they touched, so the skill now scans every touched file. `break-ui` went 0/3 and then 1/3: agents found the breaks but kept the worst-case data in a scratch page and skipped the empty state, so the skill now asks for a saved fixture, an empty-state fix and a report that quotes each breaking value exactly. Its one remaining miss is a run that still skipped the empty state. `write-swift` shows the smallest gain because Haiku already knows most of modern Swift; what the skill adds is the two traps in its third step.
+
