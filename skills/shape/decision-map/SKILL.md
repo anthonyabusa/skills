@@ -1,6 +1,6 @@
 ---
 name: decision-map
-description: Map a foggy effort before planning it: write the destination, the decisions made so far, what is not yet known and what is out of scope, then mint each open decision as a kind:decision task. Use when effort spans multiple projects or has open unknowns.
+description: "Map a foggy effort before planning it: write the destination, the decisions made so far, what is not yet known and what is out of scope, then mint each open decision as a kind:decision task. Use when effort spans multiple projects or has open unknowns."
 ---
 
 Prevents: spinning on unclear direction or reopening settled decisions.
