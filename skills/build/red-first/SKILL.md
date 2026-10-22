@@ -1,6 +1,6 @@
 ---
 name: red-first
-description: Build testable code test-first: find the seam, write ONE failing test that states the behaviour, watch it fail for the right reason, then make it green (yourself or via a subagent) and review the diff. Prevents untested, overbuilt, or misaligned code.
+description: "Build testable code test-first: find the seam, write ONE failing test that states the behaviour, watch it fail for the right reason, then make it green (yourself or via a subagent) and review the diff. Prevents untested, overbuilt, or misaligned code."
 ---
 
 Prevents: Untested, overbuilt, or misaligned code by enforcing a failing test before implementation.

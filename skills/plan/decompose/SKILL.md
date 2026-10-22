@@ -1,6 +1,6 @@
 ---
 name: decompose
-description: Turn an approved plan into tasks: thin end-to-end vertical slices, each sized to one session, written to the task store in dependency order with explicit depends-on links and a coverage check. Use after a plan is approved and the work spans more than one session.
+description: "Turn an approved plan into tasks: thin end-to-end vertical slices, each sized to one session, written to the task store in dependency order with explicit depends-on links and a coverage check. Use after a plan is approved and the work spans more than one session."
 ---
 
 Prevents: unbounded work, context-switching debt, layer-by-layer drift, and merge conflicts from long-lived branches.
