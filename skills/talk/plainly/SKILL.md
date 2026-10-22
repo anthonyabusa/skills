@@ -26,7 +26,7 @@ Not for:
    - First line: the direct answer to what they asked.
    - Then the plain explanation.
    - The reply itself carries the answer and the explanation, even when you also save a file. A reply that only says where it saved is not an answer.
-   - Then `Saved: <path>`, only if you saved a file.
+   - Then `Saved: <path>`, only if you saved a file. Write the file before the reply, run `ls <path>`, and write `Saved:` only if `ls` shows it.
    - Last line: `Next: <one action>`, only if there is one.
 
 ## Done when:  
@@ -36,5 +36,6 @@ Not for:
 - The length is shorter than the original.  
 - The human can act or decide without follow-up.
 - The reply follows the shape: answer first, one `Next:` line last.
+- Any `Saved:` path exists on disk.
 
 Adapted from mattpocock/skills wait-what (MIT).
