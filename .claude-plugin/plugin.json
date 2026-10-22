@@ -1,7 +1,7 @@
 {
   "name": "skills",
   "version": "0.1.0",
-  "description": "An idea-to-ship pipeline of agent skills: vet the idea, shape it, plan, slice, build test-first, ship with honest evidence, and learn from corrections.",
+  "description": "An idea-to-ship pipeline of agent skills: vet the idea, shape it, plan, slice, build test-first, ship with honest evidence, and learn from corrections; plus UI craft skills for motion, worst-case data, phone behavior and prototyping.",
   "author": {
     "name": "Anthony Busa",
     "url": "https://github.com/anthonyabusa"
@@ -14,7 +14,10 @@
     "planning",
     "tdd",
     "code-review",
-    "pipeline"
+    "pipeline",
+    "ui",
+    "animation",
+    "mobile"
   ],
   "skills": [
     "./skills/build/build-graph",
@@ -22,6 +25,7 @@
     "./skills/build/guardrails",
     "./skills/build/human-step",
     "./skills/build/red-first",
+    "./skills/build/write-swift",
     "./skills/learn/correction-loop",
     "./skills/learn/retro",
     "./skills/learn/write-skill",
@@ -37,6 +41,10 @@
     "./skills/ship/honest-signoff",
     "./skills/ship/pr-brief",
     "./skills/talk/plainly",
-    "./skills/talk/questionnaire"
+    "./skills/talk/questionnaire",
+    "./skills/ui/break-ui",
+    "./skills/ui/mobile-native",
+    "./skills/ui/motion",
+    "./skills/ui/prototype"
   ]
 }

@@ -22,6 +22,8 @@ Not for: trivial work (a typo, a one-line config change). Just do it.
 | 6 Ship | `pr-brief`, `honest-signoff`, `close-out` | the change is ready, or the session is ending |
 | 7 Learn | `correction-loop` (after a correction), `retro` (after a week or a project), `write-skill` (a skill misfires) | something went wrong or a window closed |
 | Talk | `plainly` (an explanation did not land), `questionnaire` (someone else holds the answers) | |
+| UI craft | `motion` (an animation is added or reviewed), `break-ui` (UI built on tidy demo data), `mobile-native` (works on desktop, wrong on a phone), `prototype` (options before committing) | the work is UI polish |
+| Swift | `write-swift` | the change touches Swift |
 
 ## Steps
 1. Classify the request: bug, idea, task, question, or chat.
