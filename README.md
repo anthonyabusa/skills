@@ -14,10 +14,10 @@ I built these for my own daily work with Claude Code and Codex, used them on rea
 | 3 Plan | `plan` | A written plan with a premortem, so the failure you can already see gets a mitigation before it happens. |
 | 4 Slice | `decompose` | Thin vertical slices with explicit dependencies, checked for coverage against the plan. |
 | 5 Build | `build-graph`, `red-first`, `fix`, `guardrails`, `human-step`, `write-swift` | Test-first changes, root-cause fixes, a pause before anything destructive, and clean hand-offs for the steps only a person can do. |
-| 6 Ship | `pr-brief`, `honest-signoff`, `close-out` | PRs that state their evidence and blast radius, and session endings that say what was verified rather than what was attempted. |
-| 7 Learn | `correction-loop`, `retro`, `write-skill` | A correction fixes the rule that caused the mistake, not only the instance; a weekly look back; a way to build and test new skills. |
+| 6 Ship | `pr-brief`, `honest-signoff`, `close-out`, `secret-sweep` | PRs that state their evidence and blast radius, session endings that say what was verified rather than what was attempted, and a pasted key caught before it becomes a commit. |
+| 7 Learn | `correction-loop`, `retro`, `write-skill`, `study` | A correction fixes the rule that caused the mistake, not only the instance; a weekly look back; a way to build and test new skills; a source read together, one question at a time, with notes in your own words. |
 | Talk | `plainly`, `questionnaire` | Explanations re-pitched when they miss, and question sets for the person who actually holds the answers. |
-| UI craft | `motion`, `break-ui`, `mobile-native`, `prototype` | Motion held to exact timing and curves, cards tried against the worst real data before users find it, phone bugs fixed at the cause, and several real directions to flip through before committing to one. |
+| UI craft | `motion`, `break-ui`, `mobile-native`, `prototype`, `verify-ui` | Motion held to exact timing and curves, cards tried against the worst real data before users find it, phone bugs fixed at the cause, several real directions to flip through before committing to one, and no UI fix called done until it was rendered at the reported width and every control was clicked. |
 
 Two plumbing skills sit underneath: `setup` picks where tasks live, and `ask` names the right skill for a request when it is not obvious. Not every request needs every stage; `ask` says which ones a request can skip, and why.
 

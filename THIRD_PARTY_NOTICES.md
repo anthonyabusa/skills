@@ -11,9 +11,10 @@ Several skills here adapt ideas from other open skill libraries. Each skill name
 | [SuperClaude-Org/SuperClaude_Framework](https://github.com/SuperClaude-Org/SuperClaude_Framework) | MIT | question-first |
 | [github/spec-kit](https://github.com/github/spec-kit) | MIT | decompose |
 | [emilkowalski/skills](https://github.com/emilkowalski/skills) | MIT | motion, break-ui, mobile-native, prototype, write-swift |
+| [humanlayer/humanlayer](https://github.com/humanlayer/humanlayer) | Apache-2.0 | plan |
 
 
-Licenses checked against each repository on 2026-10-14. The MIT license requires keeping the copyright and permission notice with substantial portions of the software; no substantial portion of any source is copied here, and credit is given regardless.
+Licenses checked against each repository on 2026-10-14 (humanlayer on 2026-10-23). The MIT and Apache-2.0 licenses require keeping the copyright and permission notice with substantial portions of the software; no substantial portion of any source is copied here, and credit is given regardless.
 
 Two files are exceptions to "original unless a skill says otherwise". `skills/ui/prototype/PICKER.md` is copied from emilkowalski/skills (commit 2d22863, checked 2026-10-21), and `skills/ui/break-ui/CATALOG.md` is adapted from the same repository. Each keeps its source notice at the top. The notice that applies to both:
 
