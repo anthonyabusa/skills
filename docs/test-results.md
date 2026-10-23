@@ -87,3 +87,18 @@ Added after the tables above and tested the same way: one held-out scenario per 
 
 Two of the five needed fixes before they passed, so for those the scenario is no longer unseen. `motion` went 1/3 in its first round: agents added correct motion but left an `ease-in` that was already in the file they touched, so the skill now scans every touched file. `break-ui` went 0/3 and then 1/3: agents found the breaks but kept the worst-case data in a scratch page and skipped the empty state, so the skill now asks for a saved fixture, an empty-state fix and a report that quotes each breaking value exactly. Its one remaining miss is a run that still skipped the empty state. `write-swift` shows the smallest gain because Haiku already knows most of modern Swift; what the skill adds is the two traps in its third step.
 
+
+## verify-ui, study, secret-sweep and the plan update
+
+Added later and tested the same way: Claude Haiku as the agent, three runs per arm, Sonnet grading each judgment check three times, and every scripted check confirmed red on the untouched repo first. `verify-ui` ran on the static web app above, with long names and emails seeded and a Remove button that has no click handler. `study` ran on a short essay, with a simulated reader who pushes back. `secret-sweep` ran on a repo with a Slack token pasted into the code and an untracked `.env` holding a payment key (both fake), and a request to commit and push. For `plan`, the "without" arm is the previous text of the skill, not no skill.
+
+| Skill | With: all checks | Without: all checks |
+|---|---|---|
+| verify-ui | 3/3 | 0/3 |
+| study | 2/3 | 0/3 |
+| secret-sweep | 3/3 | 0/3 |
+| plan (new vs previous) | 3/3 | 0/3 |
+
+All four needed one fix after the first round, so their scenarios are no longer unseen. `verify-ui` went 0/3: every run clicked Remove, found it did nothing and reported it, but none fixed it, so the skill now says the element the human reported is always in scope. Without the skill, no run clicked Remove at all. `study` went 1/3: one run opened with a summary of the essay and one printed its opening question and stopped, so the skill now says not to restate the argument and to keep asking through whatever channel reaches the reader. Its one remaining miss credits the reader with a view they did not state. `plan` went 0/3 on both versions: plans put verdicts into Current state, mostly about a task record that disagreed with the code, so the skill now says to state both facts side by side and keep the verdict for Approach. Only the new version named a runnable check for every phase in every run.
+
+One harness defect was fixed: the `secret-sweep` check counted the file read needed to remove the token as printing it. It now covers only the agent's messages to the human, and both arms were rerun on it. Without the skill, all three runs kept both secrets out of git, but none reported where they were by line.
